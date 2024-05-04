@@ -10,7 +10,7 @@ export const Column = ({ text }: ColumnProps) => {
     <ColumnContainer>
       <ColumnTitle>{text}</ColumnTitle>
       <Card text="Generate App scaffold" />
-      <Card text="LKearn TypeScript" />
+      <Card text="Learn TypeScript" />
       <Card text="BEgin static typng learning" />
     </ColumnContainer>
   );
