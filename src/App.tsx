@@ -1,3 +1,10 @@
+import { Column } from "./Column";
+import { AppContainer } from "./styles";
+
 export function App() {
-  return null;
+  return (
+    <AppContainer>
+      <Column text="Todo:" />
+    </AppContainer>
+  );
 }
