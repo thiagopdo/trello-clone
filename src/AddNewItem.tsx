@@ -1,3 +1,4 @@
+import { NewItemForm } from "./NewItemForm";
 import { AddItemButton } from "./styles";
 import { useState } from "react";
 
@@ -13,6 +14,15 @@ export function AddNewItem(props: AddNewItemProps) {
 
   if (showForm) {
     //render form
+
+    return (
+      <NewItemForm
+        onAdd={(text) => {
+          onAdd(text);
+          setShowForm(false);
+        }}
+      />
+    );
   }
 
   return (
