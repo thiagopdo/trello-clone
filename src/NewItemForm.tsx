@@ -11,7 +11,7 @@ export function NewItemForm({ onAdd }: NewItemFormProps) {
   return (
     <NewItemFormContainer>
       <NewItemInput value={text} onChange={(e) => setText(e.target.value)} />
-      <NewItemButton onClick={() => onAdd(text)}>Create</NewItemButton>
+      <NewItemButton onClick={()=>onAdd(text)}>Create</NewItemButton>
     </NewItemFormContainer>
   );
 }
