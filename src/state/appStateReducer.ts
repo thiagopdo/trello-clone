@@ -17,7 +17,7 @@ export type Appstate = {
   lists: List[];
 };
 
-export function appStateRecuer(
+export function appStateReducer(
   draft: Appstate,
   action: Action
 ): Appstate | void {
