@@ -3,6 +3,12 @@ import { useAppState } from "../state/AppStateContext";
 import { useDrag } from "react-dnd";
 import { setDraggedItem } from "../state/action";
 
+
+/**
+ * create a custom hook to handle the drag and drop functionality
+ * @param item  The item to be dragged
+ * @returns  The drag function
+ */
 export function useItemDrag(item: DragItem) {
   const { dispatch } = useAppState();
   const [, drag] = useDrag({
