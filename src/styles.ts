@@ -17,8 +17,8 @@ interface DragPreviewContainerProps {
 }
 
 export const DragPreviewContainer = styled.div<DragPreviewContainerProps>`
-  transform: ${(props) => (props.isHidden ? "rotate(5deg)" : undefined)};
-  opacity: ${(props) => (props.isHidden ? 0.3 : 1)};
+  transform: ${(props) => (props.isPreview ? "rotate(5deg)" : undefined)};
+  opacity: ${(props) => (props.isHidden ? 0 : 1)};
 `;
 
 export const ColumnContainer = styled(DragPreviewContainer)`
@@ -91,4 +91,31 @@ export const NewItemInput = styled.input`
   margin-bottom: 0.5rem;
   padding: 0.5rem 1rem;
   width: 100%;
+`;
+
+export const CustomDragLayerContainer = styled.div`
+  height: 100%;
+  pointer-events: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+`;
+
+type DragPreviewWrapperProps = {
+  position: {
+    x: number;
+    y: number;
+  };
+};
+
+export const DragPreviewWrapper = styled.div.attrs<DragPreviewWrapperProps>(
+  ({ position: { x, y } }) => ({
+    style: {
+      transform: `translate(${x}px, ${y}px)`,
+    },
+  })
+)<DragPreviewWrapperProps>`
+  transform-origin: top left;
 `;
