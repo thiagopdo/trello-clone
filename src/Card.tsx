@@ -18,7 +18,7 @@ export const Card = ({ text, id, isPreview, columnId }: CardProps) => {
   const { draggedItem, dispatch } = useAppState();
   const ref = useRef<HTMLDivElement>(null);
 
-  const { drag } = useItemDrag({ type: "CARD", id, index: 0, text, columnId });
+  const { drag } = useItemDrag({ type: "CARD", id, text, columnId });
 
   const [, drop] = useDrop({
     accept: "CARD",
